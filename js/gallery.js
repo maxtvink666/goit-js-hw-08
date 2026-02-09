@@ -104,8 +104,8 @@ function onGalleryClick(event) {
 }
 
 function closeModal(event) {
-  if (instance) {
+  if (event.key === "Escape" && instance) {
     instance.close();
-    window.removeEventListener("keydown", onEscKeyPress);
+    window.removeEventListener("keydown", closeModal);
   }
 }
